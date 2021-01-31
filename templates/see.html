@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Read</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/viewpage.css' %}">
+        <script src="{% static 'js/refresh.js' %}"></script>
+    </head>
+
+    <body>
+        <h3>Now: {{time_now}}</h3>
+        <br>
+        <h3>Upcoming deadlines</h3>
+        <table border="1" id="rem">
+        <tr>
+        <th><b>Title</b></th>
+        <th><b>Description</b></th>
+        <th><b>Deadline</b></th>
+        </tr>   
+        {% for item in query_result %}
+        <tr>
+        <td>{{item.title}}</td>
+        <td>{{item.desc}}</td>
+        <td>{{item.deadline}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        <br><br>
+        <h3>Deadline over</h3>
+        <table border="1" id="rem">
+        <tr>
+        <th><b>Title</b></th>
+        <th><b>Description</b></th>
+        <th><b>Deadline</b></th>
+        </tr>   
+        {% for item in query_result_over %}
+        <tr>
+        <td>{{item.title}}</td>
+        <td>{{item.desc}}</td>
+        <td>{{item.deadline}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </body>
+
+</html>

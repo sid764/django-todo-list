@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>To Do App</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/pagestyle.css' %}">
+    </head>
+
+    <body>
+        <h1>ToDo App</h1>
+        <h2>A place where you can make a list of to-do things with deadlines</h2>
+
+        <div>
+            {% if user.is_authenticated %}
+            <br>
+            <h3>Hi {{user.first_name}}!</h3><br>
+            <ul><a href="accounts/see">View my list</a></ul>
+            <ul><a href="accounts/add">Add to list</a></ul>
+            <ul><a href="accounts/delete">Delete from list</a></ul><br><br><br>
+			<ul><a href="accounts/logout">Logout</a></ul>
+           
+            {% else %}
+            <br><br><br>
+		    <ul><a href="accounts/register">Register</a></ul><br><br><br>
+			<ul><a href="accounts/login">Login</a></ul>
+		    {% endif %}
+        </div>
+    </body>
+</html>
+

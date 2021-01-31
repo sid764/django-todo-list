@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Add</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/pagestyle.css' %}">
+    </head>
+
+    <body>
+        <h2>Add to list</h2>
+        <div>Please ensure that your titles are unique</div><br>
+        <form action="add" method="post" autocomplete="off">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Title"><br><br>
+            <input type="text" name="desc" placeholder="Description"><br><br>
+            <div>Deadline</div>
+            <input type="datetime-local" name="deadline" placeholder="Deadline"><br><br><br>
+            <input type="SUBMIT" class="sty">
+        </form>
+        <br>
+        <div>
+            {% for message in messages %}
+            <div>{{message}}</div>
+            {% endfor %}
+        </div>
+    </body>
+
+</html>

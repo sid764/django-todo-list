@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Delete</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/pagestyle.css' %}">
+    </head>
+
+    <body>
+        <h2>Delete from list</h2><br>
+        <form action="delete" method="post" autocomplete="off">
+            {% csrf_token %}
+            <input type="text" name="rtitle" placeholder="Title"><br><br>
+            <input type="SUBMIT" class="sty">
+        </form>
+        <div>
+            {% for message in messages %}
+            <h5>{{message}}</h5>
+            {% endfor %}
+        </div>
+    </body>
+
+</html>

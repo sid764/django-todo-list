@@ -1,0 +1,34 @@
+h1 {text-align: center;
+    font-family:cursive;
+    background-color:darkslateblue;
+    color:lightgreen;
+    border-radius: 25px;}
+
+h2 {text-align: center;
+    font-family:cursive;
+    background-color:yellow;
+    text-size-adjust: 0.58;
+    border-radius: 25px;
+    color:darkslateblue;}
+
+h3 {font-family: cursive;}
+
+div {text-align: center;
+     font-family:cursive;}
+
+ul {text-align: center;
+    display: inline;
+    font-family: cursive;}
+
+a {background-color:lightgreen;
+   color:darkslateblue;
+   padding: 0.5em 1em;
+   text-decoration:slategray;
+   border-radius:10px;
+   font-family: cursive;}
+   
+form {text-align: center;}
+
+.sty {border-radius: 10px;
+      font-family: cursive;
+      background-color:lightgreen;}
