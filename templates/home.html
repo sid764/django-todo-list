@@ -11,18 +11,18 @@
     </head>
 
     <body>
-        <h1>ToDo App</h1>
-        <h2>A place where you can make a list of to-do things with deadlines</h2>
+        <h1>To-Do List</h1>
 
         <div>
             {% if user.is_authenticated %}
             <br>
-            <h3>Hi {{user.first_name}}!</h3><br>
-            <ul><a href="accounts/see">View my list</a></ul>
-            <ul><a href="accounts/add">Add to list</a></ul>
-            <ul><a href="accounts/delete">Delete from list</a></ul><br><br><br>
+            <h3>Hi {{user.first_name}}!</h3>
+            <br>
+            <ul><a href="accounts/see">View my list</a></ul><br><br><br>
+            <ul><a href="accounts/add">Add to my list</a></ul><br><br><br>
+            <ul><a href="accounts/delete">Delete from my list</a></ul><br><br><br>
 			<ul><a href="accounts/logout">Logout</a></ul>
-           
+
             {% else %}
             <br><br><br>
 		    <ul><a href="accounts/register">Register</a></ul><br><br><br>

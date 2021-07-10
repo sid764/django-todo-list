@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '^qgjh$tty@3+tz-2bg4!zj@((kza_-tpr41i&_j*#&1@1cktx^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['todo-list-111.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'todo_db',
         'USER': 'postgres',
-        'PASSWORD': '<password>',
+        'PASSWORD': '12345',
         'HOST': 'localhost'
     }
 }

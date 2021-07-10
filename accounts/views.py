@@ -6,6 +6,17 @@ import datetime
 from django.utils import timezone
 # Create your views here.
 
+def see(request):
+    
+    current_user = request.user
+    now = datetime.datetime.now()
+    query_result = Reminder.objects.filter(uid=current_user.id, deadline__gte=now).order_by('deadline')
+    query_result_over = Reminder.objects.filter(uid=current_user.id, deadline__lte=now).order_by('-deadline')
+    context = {'query_result': query_result, 'query_result_over': query_result_over, 'time_now': now}
+    
+    return render(request, 'see.html', context)
+
+
 def login(request):
     
     if request.method == 'POST':
@@ -67,17 +78,6 @@ def logout(request):
     
     auth.logout(request)
     return redirect('/')
-
-
-def see(request):
-    
-    current_user = request.user
-    now = datetime.datetime.now()
-    query_result = Reminder.objects.filter(uid=current_user.id, deadline__gte=now).order_by('deadline')
-    query_result_over = Reminder.objects.filter(uid=current_user.id, deadline__lte=now).order_by('-deadline')
-    context = {'query_result': query_result, 'query_result_over': query_result_over, 'time_now': now}
-    
-    return render(request, 'see.html', context)
 
 
 def add(request):
