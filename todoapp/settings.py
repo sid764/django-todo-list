@@ -25,7 +25,7 @@ SECRET_KEY = '^qgjh$tty@3+tz-2bg4!zj@((kza_-tpr41i&_j*#&1@1cktx^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['todo-list-111.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['todo-list-5.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -78,12 +78,14 @@ WSGI_APPLICATION = 'todoapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'todo_db',
-        'USER': 'postgres',
-        'PASSWORD': '12345',
-        'HOST': 'localhost'
+        'NAME': 'dbsrjangeemvrq',
+        'HOST' : 'ec2-34-193-101-0.compute-1.amazonaws.com',
+        'PORT' : 5432,
+        'USER': 'ytjmgnklqfxenw',
+        'PASSWORD': 'c2602c63ae91632af2fe597d5d943321e836d06e948be893e9b806cdc087f1c6',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
